@@ -1,0 +1,15 @@
+<input type="text"
+       ng-model="$ctrl.airport"
+       ng-keyup="$ctrl.filterAirports($ctrl.airport)"
+       ng-click="$ctrl.onFocus()"
+       ng-blur="$ctrl.onBlur()"
+       ng-required="true">
+<ul class="listGroup"
+    ng-if="$ctrl.showList">
+    <li ng-repeat="airportValue in $ctrl.airports"
+        ng-mousedown="$ctrl.selectAirport(airportValue)">
+        <span>
+            {{airportValue.name}}
+        </span>
+    </li>
+</ul>

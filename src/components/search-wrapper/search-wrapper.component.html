@@ -1,0 +1,39 @@
+<div class="searchInputBlock">
+  <div class="searchInputIcon">
+    <i class="fa fa-plane"
+    aria-hidden="true"></i>
+  </div>
+  <autocomplete
+    selected-airport="$ctrl.originAirport"
+    airports-list="$ctrl.airportList"
+    on-select="$ctrl.onOriginAirport(selected)">
+  </autocomplete>
+  <div class="alert"
+       ng-show="!$ctrl.originAirport">
+    Please, choose your departure
+  </div>
+</div>
+<div class="searchInputBlock"
+     ng-class="{disabled: (!$ctrl.originAirport && !$ctrl.destAirport)}">
+  <div ng-click="$ctrl.replaceTripLocations()"
+       class="searchInputChange">
+       <i class="fa fa-refresh"
+           aria-hidden="true"></i>
+   </div>
+ </div>
+<div class="searchInputBlock"
+     ng-class="{disabled: !$ctrl.originAirport}">
+  <div class="searchInputIcon">
+      <i class="fa fa-plane arrivalIcon"
+      aria-hidden="true"></i>
+  </div>
+  <autocomplete
+    selected-airport="$ctrl.destAirport"
+    airports-list="$ctrl.routesList"
+    on-select="$ctrl.onDestAirport(selected)">
+  </autocomplete>
+  <div class="alert"
+       ng-show="$ctrl.originAirport && !$ctrl.destAirport">
+    Please, choose your arrival
+  </div>
+</div>
