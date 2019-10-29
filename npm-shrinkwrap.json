@@ -98,15 +98,20 @@
       "dev": true
     },
     "angular": {
-      "version": "1.5.7",
-      "resolved": "https://registry.npmjs.org/angular/-/angular-1.5.7.tgz",
-      "integrity": "sha1-Ts79DHE0tydXujtBu6Oh5NXv9aw="
+      "version": "1.6.4",
+      "resolved": "https://registry.npmjs.org/angular/-/angular-1.6.4.tgz",
+      "integrity": "sha1-A7exXAGggC1+LPWTJA5gQFTcd/s="
     },
     "angular-mocks": {
       "version": "1.6.10",
       "resolved": "https://registry.npmjs.org/angular-mocks/-/angular-mocks-1.6.10.tgz",
       "integrity": "sha512-1865/NmqHNogibNoglY1MGBjx882iu2hI46BBhYDWyz0C4TDM5ER8H8SnYwQKUUG4RXMDsJizszEQ2BEoYKV9w==",
       "dev": true
+    },
+    "angular-sanitize": {
+      "version": "1.6.4",
+      "resolved": "https://registry.npmjs.org/angular-sanitize/-/angular-sanitize-1.6.4.tgz",
+      "integrity": "sha1-YKN+qW+w1KMio8y2TuSlzzsVTww="
     },
     "angular-ui-router": {
       "version": "https://registry.npmjs.org/angular-ui-router/-/angular-ui-router-0.2.18.tgz",
@@ -2733,9 +2738,9 @@
       }
     },
     "esprima": {
-      "version": "2.7.3",
-      "resolved": "https://registry.npmjs.org/esprima/-/esprima-2.7.3.tgz",
-      "integrity": "sha1-luO3DVd59q1JzQMmc9HDEnZ7pYE=",
+      "version": "4.0.1",
+      "resolved": "https://registry.npmjs.org/esprima/-/esprima-4.0.1.tgz",
+      "integrity": "sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==",
       "dev": true
     },
     "esquery": {
@@ -4809,13 +4814,13 @@
       "dev": true
     },
     "js-yaml": {
-      "version": "3.7.0",
-      "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-3.7.0.tgz",
-      "integrity": "sha1-XJZ93YN6m/3KXy3oQlOr6KHAO4A=",
+      "version": "3.13.1",
+      "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-3.13.1.tgz",
+      "integrity": "sha512-YfbcO7jXDdyj0DGxYVSlSeQNHbD7XPWvrVWeVUujrQEoZzWJIRrCPoyk6kL6IAjAG2IolMK4T0hNUe0HOUs5Jw==",
       "dev": true,
       "requires": {
         "argparse": "^1.0.7",
-        "esprima": "^2.6.0"
+        "esprima": "^4.0.0"
       }
     },
     "jsbn": {
@@ -5177,9 +5182,9 @@
       }
     },
     "lodash": {
-      "version": "4.6.1",
-      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.6.1.tgz",
-      "integrity": "sha1-3wDBFkrSNrGDz8OIel6NOMxjy7w=",
+      "version": "4.17.15",
+      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.17.15.tgz",
+      "integrity": "sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==",
       "dev": true
     },
     "lodash._baseassign": {
@@ -8878,6 +8883,24 @@
         "mkdirp": "~0.5.1",
         "sax": "~1.2.1",
         "whet.extend": "~0.9.9"
+      },
+      "dependencies": {
+        "esprima": {
+          "version": "2.7.3",
+          "resolved": "https://registry.npmjs.org/esprima/-/esprima-2.7.3.tgz",
+          "integrity": "sha1-luO3DVd59q1JzQMmc9HDEnZ7pYE=",
+          "dev": true
+        },
+        "js-yaml": {
+          "version": "3.7.0",
+          "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-3.7.0.tgz",
+          "integrity": "sha1-XJZ93YN6m/3KXy3oQlOr6KHAO4A=",
+          "dev": true,
+          "requires": {
+            "argparse": "^1.0.7",
+            "esprima": "^2.6.0"
+          }
+        }
       }
     },
     "table": {
