@@ -1,0 +1,17 @@
+<input 
+    #inputWithList
+    type="input" 
+    name="airportName" 
+    [(ngModel)]="airportName"
+    (focus)="showList = true"
+    (focusout)="showList = false"
+    (keyup)="filterList(inputWithList.value)"
+    (change)="inputChanged(inputWithList.value)"
+    autocomplete="off"
+    required />
+
+<ul class="listGroup" *ngIf="currentList && showList">
+    <li *ngFor="let city of currentList" (mousedown)="selectAirport(city)">
+        <span>{{city.name}}</span> 
+    </li>
+</ul>

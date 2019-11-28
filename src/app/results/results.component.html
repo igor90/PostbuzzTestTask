@@ -1,0 +1,77 @@
+<search-flights></search-flights>
+
+<div class="flightResults">
+    <div class="flightResultsInfo">
+        <div class="flightResultsTitle">
+        <i class="fa fa-list-alt" aria-hidden="true"></i> Search Results
+        </div>
+        <p *ngIf="!flights.length">No results found. Please try again.</p>
+    </div>
+    <ng-container *ngIf="flights.length > 0">
+    <table class="searchInfo">
+        <tbody>
+            <tr>
+                <td>
+                    <i class="fa fa-plane" aria-hidden="true"></i>
+                    <span class="searchInfoTitle">From: </span> 
+                    <span class="parametr">{{departure}}</span>
+                </td>
+                <td>
+                    <i class="fa fa-plane arrivalIcon" aria-hidden="true">
+                    </i><span class="searchInfoTitle">To: </span>
+                    <span class="parametr">{{arrive}}</span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                    <span class="searchInfoTitle">Departure date: </span>
+                    <span class="parametr">{{startDate}}</span>
+                </td>
+                <td>
+                    <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                    <span class="searchInfoTitle">Return date: </span> 
+                    <span class="parametr">{{endDate}}</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="searchDetails">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>
+                    <button class="sortButton" (click)="changeSorting('dateFrom')">
+                        <i class="fa fa-arrow-up" aria-hidden="true"></i> 
+                        <span class="searchInfoTitle"> Date from </span>
+                        <span *ngIf="sortType === 'dateFrom' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span *ngIf="sortType === 'dateFrom' && sortReverse" class="fa fa-caret-up"></span>
+                    </button>
+                </th>
+                <th>
+                    <button class="sortButton" (click)="changeSorting('dateTo')">
+                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                        <span class="searchInfoTitle"> Date to </span>
+                        <span *ngIf="sortType === 'dateTo' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span *ngIf="sortType === 'dateTo' && sortReverse" class="fa fa-caret-up"></span>
+                    </button>
+                </th>
+                <th>
+                    <button class="sortButton" (click)="changeSorting('price')">
+                        <i class="fa fa fa-euro" aria-hidden="true"></i>
+                        <span class="searchInfoTitle"> Price </span>
+                        <span *ngIf="sortType === 'price' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span *ngIf="sortType === 'price' && sortReverse" class="fa fa-caret-up"></span>
+                    </button>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let flight of flights; index as i">
+                <td>{{i + 1}}.</td>
+                <td>{{flight.dateFrom | date: 'dd.MM.yyyy' }}</td>
+                <td>{{flight.dateTo | date: 'dd.MM.yyyy' }}</td>
+                <td>{{flight.price | currency: flight.currency: 'symbol' : '1.0-0'}}</td>
+            </tr>
+        </tbody>
+    </table>
+    </ng-container>
+</div>

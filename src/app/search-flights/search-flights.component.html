@@ -1,0 +1,48 @@
+<div class="searchBlock">
+<form #flightsSearchForm="ngForm">
+    <div class="searchInputBlock">
+        <div class="searchInputIcon">
+            <i class="fa fa-plane" aria-hidden="true"></i>
+        </div>
+        
+        <dropdown-input [list]="airportsList" [airport]="departure" (airportChange)="aiportDepartureChange($event)"></dropdown-input>
+        <div class="alert" *ngIf="!departure?.iataCode">Please, choose your departure</div>
+    </div>
+
+    <div class="searchInputBlock" [ngClass]="{'disabled': !departure || !arrive}">
+        <div class="searchInputChange" (click)="reverseAirports()">
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+        </div>
+    </div>
+
+    <div class="searchInputBlock" [ngClass]="{'disabled': !departure}">
+        <div class="searchInputIcon">
+            <i class="fa fa-plane arrivalIcon" aria-hidden="true"></i>
+        </div>
+
+        <dropdown-input [list]="routesList" [airport]="arrive" (airportChange)="aiportArriveChange($event)"></dropdown-input>
+        <div class="alert" *ngIf="departure?.iataCode && !arrive?.iataCode">Please, choose your arrival</div>
+    </div>
+
+    <div class="searchInputBlock">
+        <div class="searchInputIcon">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+        </div>
+        <input type="date" name="startDate" [(ngModel)]="startDate" [min]="minDate" required />
+    </div>
+    
+    <div class="searchInputBlock">
+        <div class="searchInputIcon">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+        </div>
+        <input type="date" name="endDate" [(ngModel)]="endDate" [min]="startDate" required />
+    </div>
+
+    <div class="searchInputBlock forTabletButton">
+        <button type="submit" class="submitButton" (click)="searchFlights()" [disabled]="flightsSearchForm.invalid">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            Find flights
+        </button>
+    </div>
+</form>
+</div>
